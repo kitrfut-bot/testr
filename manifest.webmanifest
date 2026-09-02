@@ -1,0 +1,9 @@
+{
+  "name": "NOCTURNE — Offline Arcade",
+  "short_name": "NOCTURNE",
+  "description": "A private collection of twelve offline mini games.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#090a14",
+  "theme_color": "#080a16"
+}
