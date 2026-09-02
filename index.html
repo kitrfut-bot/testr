@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080a16" />
+  <meta name="description" content="NOCTURNE is a private, offline collection of twelve premium mini games." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <title>NOCTURNE — Offline Arcade</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Nocturne home"><span class="brand-mark">N</span><span>NOCTURNE</span></a>
+      <div class="top-actions"><span class="offline-dot"></span><span class="offline-copy">OFFLINE ARCADE</span><button class="icon-button" id="soundButton" aria-label="Toggle sound">◒</button><button class="avatar">A</button></div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span></span> YOUR PRIVATE ARCADE</div>
+      <h1>One app.<br><em>Endless play.</em></h1>
+      <p>Twelve handcrafted mini games. No ads, no account, no signal required.</p>
+      <div class="hero-actions"><button class="primary-button" id="playFeatured">Play featured <b>→</b></button><button class="text-button" id="surpriseButton">✦ Surprise me</button></div>
+      <div class="hero-orbit"><div class="orbit-card orbit-card-one">✦<small>Starlight</small></div><div class="orbit-card orbit-card-two">●<small>Orbit</small></div><div class="orbit-ring"></div></div>
+    </section>
+
+    <section class="library" id="library">
+      <div class="section-heading"><div><div class="eyebrow"><span></span> THE COLLECTION</div><h2>Pick your <em>mood.</em></h2></div><div class="collection-stat"><strong>12</strong><span>games<br>inside</span></div></div>
+      <div class="filter-row" id="filters"><button class="filter active" data-filter="all">All games</button><button class="filter" data-filter="Arcade">Arcade</button><button class="filter" data-filter="Puzzle">Puzzle</button><button class="filter" data-filter="Zen">Zen</button></div>
+      <div class="game-grid" id="gameGrid"></div>
+    </section>
+
+    <section class="footer-banner"><div><div class="eyebrow"><span></span> ALWAYS YOURS</div><h2>Made for the<br><em>quiet hours.</em></h2></div><p>Everything is stored locally. Your best scores travel with you, even when the world goes offline.</p><div class="moon">☾</div></section>
+  </main>
+
+  <div class="game-modal" id="gameModal" aria-hidden="true"><div class="modal-backdrop" id="modalBackdrop"></div><section class="game-window" role="dialog" aria-modal="true" aria-labelledby="gameTitle"><button class="close" id="closeModal" aria-label="Close game">×</button><div class="game-meta"><span class="game-type" id="gameType"></span><span id="bestScore"></span></div><h2 id="gameTitle"></h2><p id="gameInstructions"></p><div class="game-stage" id="gameStage"></div><div class="game-controls" id="gameControls"></div></section></div>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js'));
+    }
+  </script>
+</body>
+</html>
